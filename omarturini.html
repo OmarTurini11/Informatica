@@ -1,54 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creazione di div dinamici</title>
-    <style>
-        .custom-div {
-            width: 10px;
-            height: 10px;
-            border: 1px solid #000;
-            display: inline-block;
-            margin: 2px;
-        }
-    </style>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <label for="numeroDiv">Inserisci un numero:</label>
-    <input type="number" id="numeroDiv" min="1">
-    <button onclick="creaDiv()">Crea Div</button>
+ 
+<div class="container"><nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Manuel Pogliani</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            esercizi.js
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="Eserizio 1.html">ESERCIZIO 1</a></li>
+              <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="Eserizio 2.html">ESERCIZIO 2</a></li>
+             <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">ESERCIZIO 3</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
 
-    <script>
-        function creaDiv() {
-            // Ottieni il numero inserito dall'utente
-            var numeroDiv = document.getElementById('numeroDiv').value;
+</div>
 
-            // Assicurati che sia un numero valido e maggiore di 0
-            if (isNaN(numeroDiv) || numeroDiv <= 0) {
-                alert("Inserisci un numero valido e maggiore di 0.");
-                return;
-            }
-
-            // Ottieni il contenitore dove inserire i div
-            var container = document.body;
-
-            // Ciclo for per creare i div
-            for (var i = 0; i < numeroDiv; i++) {
-                // Crea un nuovo elemento div
-                var nuovoDiv = document.createElement('div');
-
-                // Aggiungi la classe personalizzata per lo stile
-                nuovoDiv.classList.add('custom-div');
-
-                // Colora il div come si vuole (ad esempio, colore casuale)
-                var coloreCasuale = '#' + Math.floor(Math.random()*16777215).toString(16);
-                nuovoDiv.style.backgroundColor = coloreCasuale;
-
-                // Aggiungi il div al contenitore
-                container.appendChild(nuovoDiv);
-            }
-        }
-    </script>
 </body>
 </html>
